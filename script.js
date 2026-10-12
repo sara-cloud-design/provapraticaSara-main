@@ -59,3 +59,7 @@ desktopMedia.addEventListener('change', function () {
   else if (desktopMedia.matches && focusOnButton) navigationPanel.querySelector('a').focus();
   else if (!desktopMedia.matches && focusInNavigation) navigationButton.focus();
 });
+
+ const navigationButton = document.querySelector('.navigation-toggle'); 
+ const navigationLabel = document.querySelector('.navigation-label'); 
+ const navigationPanel = document.querySelector('.navigation-panel');
