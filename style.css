@@ -49,7 +49,6 @@ img{
     --color-button-primary-bg:green;
     --color-button-secondary-bg: rgba(255,255,255,0.12);
     --color-button-secondary-border: rgba(255,255,255,0.06);
-    --dati-autore-gap: 4em;
     --font-size-h2: 35px;
     --font-size-h3: 28px;
     --text-100-font-size: 0.875em;
@@ -458,6 +457,18 @@ body {
 
     }
 
+    .breakdownTabs-item-study .is-selected {
+        color: var(--color-black);
+    }
+
+    .breakdownTabs-item-layout .is-selected {
+        color: var(--color-black);
+    }
+
+    .breakdownTabs-item-check .is-selected {
+        color: var(--color-black);
+    }
+
     .breakdownTabs-toggle{
         display: none;
     }
@@ -466,17 +477,23 @@ body {
     display: none;
    }
 
-    .breakdownTabs:has(#breakdownTabs-item-study.is-selected) .breakdownTabs-visual-study {
+    .breakdownTabs:has(#breakdownTabs-item-study .is-selected) .breakdownTabs-visual-study {
         display: block;
     }
 
-    .breakdownTabs:has(#breakdownTabs-item-layout.is-selected) .breakdownTabs-visual-layout {
+    .breakdownTabs:has(#breakdownTabs-item-layout .is-selected) .breakdownTabs-visual-layout {
         display: block;
     }
 
-    .breakdownTabs:has(#breakdownTabs-item-check.is-selected) .breakdownTabs-visual-check {
+    .breakdownTabs:has(#breakdownTabs-item-check .is-selected) .breakdownTabs-visual-check {
         display: block;
     }
+
+    .breakdownTabs-button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
 }
 
 /* Destinazioni provvisorie dei link, da completare/sostituire in base al vostro case study */
@@ -604,15 +621,22 @@ body {
     background-color: color-mix(in srgb, var(--color-button-secondary-bg), #fff 10%);
 }
 
-.white-background{
-    background-color: (var(--color-white));
-}
 
 .dati-autore{
     display: flex;
     padding: 32px;
-    gap: var(--dati-autore-gap);
+    gap: 4em;
     justify-content: center;
+}
+
+
+@media(max-width: 600px) {
+    .dati-autore{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        
+    }
 }
 
 .dati-nome{
@@ -683,100 +707,7 @@ color: var(--color-text-muted);
 }
 
 
-.concept-eyebrow {
-    /*
-    display:flex;
-    font-family: var(--font-mono);
-    font-size: var(--eyebrow-font-size);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--color-text-muted);
-    gap: 0.4em;
-    line-height: 6em;
-    align-items: flex-start;
-    */
 
-    font-family: var(--font-mono);
-    font-size: var(--eyebrow-font-size);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--color-border-muted);
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    gap: 0.4em;
-
-
-
-}
-
-.introduzione-concept {
-    display: flex;
-    flex-direction: column;
-    padding: 4em;
-    gap: 1em;
-}
-
-
-
-.introduzione-concept h2 {
-    font-size: var(--font-size-h2);
-}
-
-.introduzione-concept p {
-    font-size:var(--text-200-font-size);
-    color: var(--color-text-muted);
-}
-
-.descrizione-concept{
-    grid-column: 1;
-    grid-row: 2;
-    padding: 4em;
-}
-
-.descrizione-concept h3{
-     font-size: var(--font-size-h3);
-}
-
-.descrizione-concept p {
-    font-size: 1em;
-}
-
-.content-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-}
-
-.history{
-    display: flex;
-    flex-direction: column;
-    padding: 6em;
-    grid-column: 2;
-}
-
-.history ul {
-    list-style-type: none;
-    line-height: 2em;
-}
-
-.history h3{
-    font-size: 22px;
-    line-height: 3em;
-
-}
-
-.history li{
-    font-size: var(--text-200-font-size);
-    color: var(--color-text-muted);
-}
-
-.elaborati{
-    display: flex;
-    flex-direction: column;
-    padding: 6em;
-    grid-column: 2;
-}
 
 .case-study-intro{
     display: flex;
@@ -804,23 +735,25 @@ color: var(--color-text-muted);
     color: var(--color-text-muted);
  }
 
+
+ .theme-light{
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+ }
+
 .breakdownTabs{
 --breakdownTabs-button-gap: 1em;
 --breakdownTabs-button-padding: 0em 0em 1.5em 0em;
+--breakdownTabs-list-padding: 1.25em 2.25em 1.25em 2.5em;
 
 }
 
-.breakdownTabs-item::before{
-height: var(--border-width);
-width: fit-content;
-position: relative;
-transform: scaleY(2);
-transform-origin: top;
-
-
+.border-block{
+    padding: 1.5em;
 }
 
-.breakdownTabs-ready .breakdownTabs-item-:not(.is-selected) .breakdownTabs-text {
+.breakdownTabs-ready .breakdownTabs-item:not(.is-selected) .breakdownTabs-text {
     display: none;
 }
 
@@ -832,15 +765,15 @@ transform-origin: top;
     display: none;
 }
 
-.breakdownTabs:has(#breakdownTabs-item-study.is-selected) .breakdownTabs-visual-study {
+.breakdownTabs:has(#breakdownTabs-item-study .is-selected) .breakdownTabs-visual-study {
     display: block;
 }
 
-.breakdownTabs:has(#breakdownTabs-item-layout.is-selected) .breakdownTabs-visual-layout {
+.breakdownTabs:has(#breakdownTabs-item-layout .is-selected) .breakdownTabs-visual-layout {
     display: block;
 }
 
-.breakdownTabs:has(#breakdownTabs-item-check.is-selected) .breakdownTabs-visual-check {
+.breakdownTabs:has(#breakdownTabs-item-check .is-selected) .breakdownTabs-visual-check {
     display: block;
 }
 
@@ -858,6 +791,41 @@ transform-origin: top;
     gap: var(--breakdownTabs-button-gap);
     padding: var(--breakdownTabs-button-padding);
 
+}
+
+.breakdownTabs-item{
+    padding: var(--breakdownTabs-list-padding);
+    list-style: none;
+    position: relative;
+
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .breakdownTabs-item:hover::before {
+    background-color:#08872B; /* Colore al passaggio del mouse */
+    transform: scaleY(2);
+  }
+}
+
+.breakdownTabs-item::before{
+
+height: var(--border-width);
+position: relative;
+content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #d1d5db; /* Colore di default della linea */
+  transform-origin: top;
+  transform: scaleY(1);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+    
+}
+
+.breakdownTabs-item .is-selected::before {
+  background-color:#08872B;/* Colore quando selezionato */
+  transform: scaleY(2); /* Moltiplica lo spessore senza alterare il layout */
 }
 
 .breakdownTabs-title{
