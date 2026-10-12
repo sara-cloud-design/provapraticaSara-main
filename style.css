@@ -436,6 +436,10 @@ body {
     padding: 1.75em;
     }
 
+    .breakdownTabs-text{
+        display: block !important;
+    }
+
     .breakdownTabs-title {
     color: var(--color-text-muted);
     }
@@ -624,7 +628,6 @@ body {
 
 .dati-autore{
     display: flex;
-    padding: 32px;
     gap: 4em;
     justify-content: center;
 }
@@ -740,6 +743,7 @@ color: var(--color-text-muted);
   display: flex;
   flex-direction: column;
   gap: 5em;
+  padding: 1.5em;
  }
 
 .breakdownTabs{
@@ -749,9 +753,6 @@ color: var(--color-text-muted);
 
 }
 
-.border-block{
-    padding: 1.5em;
-}
 
 .breakdownTabs-ready .breakdownTabs-item:not(.is-selected) .breakdownTabs-text {
     display: none;
@@ -759,6 +760,10 @@ color: var(--color-text-muted);
 
 .breakdownTabs-ready .breakdownTabs-toggle {
     display: block;
+}
+
+.breakdownTabs-text{
+    display: none;
 }
 
 .breakdownTabs-visual {
