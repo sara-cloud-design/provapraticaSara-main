@@ -36,6 +36,7 @@ img{
     --color-white: #fff;
     --container-width: 1280px;
     --color-text-muted: #58635B;
+    --color-cursor: #5FED83;
     --spacing-64: 64px;
     --spacing-40: 40px;
     --heading-1-font-size: 56px;
@@ -436,8 +437,8 @@ body {
     padding: 1.75em;
     }
 
-    .breakdownTabs-text{
-        display: block !important;
+    .breakdownTabs-ready .breakdownTabs-text{
+        display: block ;
     }
 
     .breakdownTabs-title {
@@ -481,15 +482,15 @@ body {
     display: none;
    }
 
-    .breakdownTabs:has(#breakdownTabs-item-study .is-selected) .breakdownTabs-visual-study {
+    .breakdownTabs:has(#breakdownTabs-item-study.is-selected) .breakdownTabs-visual-study {
         display: block;
     }
 
-    .breakdownTabs:has(#breakdownTabs-item-layout .is-selected) .breakdownTabs-visual-layout {
+    .breakdownTabs:has(#breakdownTabs-item-layout.is-selected) .breakdownTabs-visual-layout {
         display: block;
     }
 
-    .breakdownTabs:has(#breakdownTabs-item-check .is-selected) .breakdownTabs-visual-check {
+    .breakdownTabs:has(#breakdownTabs-item-check.is-selected) .breakdownTabs-visual-check {
         display: block;
     }
 
@@ -712,7 +713,7 @@ color: var(--color-text-muted);
 
 
 
-.case-study-intro{
+.intro{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -770,15 +771,15 @@ color: var(--color-text-muted);
     display: none;
 }
 
-.breakdownTabs:has(#breakdownTabs-item-study .is-selected) .breakdownTabs-visual-study {
+.breakdownTabs:has(#breakdownTabs-item-study.is-selected) .breakdownTabs-visual-study {
     display: block;
 }
 
-.breakdownTabs:has(#breakdownTabs-item-layout .is-selected) .breakdownTabs-visual-layout {
+.breakdownTabs:has(#breakdownTabs-item-layout.is-selected) .breakdownTabs-visual-layout {
     display: block;
 }
 
-.breakdownTabs:has(#breakdownTabs-item-check .is-selected) .breakdownTabs-visual-check {
+.breakdownTabs:has(#breakdownTabs-item-check.is-selected) .breakdownTabs-visual-check {
     display: block;
 }
 
@@ -848,16 +849,24 @@ content: '';
 }
 
 
-
-.project-enter h2{
-    font-size: 40px;
-    text-align: center;
-    font-weight: 500;
+.project-enter{
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
 }
 
-.project-enter p{
+.project-enter-title{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 300;
+    color: #fff !important;
+}
+
+.project-enter-text{
     text-align: center;
     font-size: var(--text-100-font-size);
+    color: var(--color-text-muted);
 }
 
 

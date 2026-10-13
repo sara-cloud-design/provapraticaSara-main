@@ -60,6 +60,33 @@ desktopMedia.addEventListener('change', function () {
   else if (!desktopMedia.matches && focusInNavigation) navigationButton.focus();
 });
 
- const navigationButton = document.querySelector('.navigation-toggle'); 
- const navigationLabel = document.querySelector('.navigation-label'); 
- const navigationPanel = document.querySelector('.navigation-panel');
+const breakdownTabs = document.querySelector("breakdownTabs");
+const breakdownTabsItems = document.querySelectorAll("breakdownTabs-item");
+const breakdownTabsButton = document.querySelectorAll("breakdownTabs-button");
+
+breakdownTabs.classList.add = ("breakdownTabs-ready");
+
+function selectBreakdownTabs(selectedIndex) {
+  for (let i = 0; i < breakdownTabsItems.length; i++) {
+    let element = breakdownTabsButton[i];
+    let toggle = breakdownTabsItems[i].querySelector('.breakdownTabs-toggle');
+
+    if (i === selectedIndex) {
+      breakdownTabsItems[i].classList.add('is-selected');
+      element.style.color = 'var(--color-black)';
+      toggle.style.transform = 'rotate(180deg)';
+    }
+
+    else {
+      breakdownTabsItems[i].classList.remove('is-selected');
+      element.style.color = 'var(--color-muted)';
+      toggle.style.transform = 'rotate(0deg)';
+    }
+  }
+}
+
+for (let i = 0; i < breakdownTabsButton.length; i++) {
+  breakdownTabsButton[i].addEventListener('click', function() {
+    selectBreakdownTabs(i);
+  });
+}
