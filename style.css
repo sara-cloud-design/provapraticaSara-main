@@ -429,6 +429,10 @@ body {
         outline-offset: var(--focus-outline-offset);
     }
 
+    .breakdownTabs-toggle{
+        display: none;
+    }
+
     .breakdownTabs-list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -472,10 +476,6 @@ body {
 
     .breakdownTabs-item-check .is-selected {
         color: var(--color-black);
-    }
-
-    .breakdownTabs-toggle{
-        display: none;
     }
 
     .breakdownTabs-visual {
@@ -751,7 +751,12 @@ background: var(--color-white);
 }
 
 .theme-light .button-secondary{
-    background-color: #A4AEA6;
+    background-color: rgba(0,0,0,0.06);
+    border-color: #A4AEA6;
+}
+
+.theme-light .button-secondary:hover{
+    background-color: color-mix(in srgb, var(--color-button-secondary-bg), #A4AEA6  100%);;
 }
 
 .theme-light .button-primary{
@@ -773,6 +778,8 @@ background: var(--color-white);
 .breakdownTabs-ready .breakdownTabs-toggle {
     display: block;
 }
+
+
 
 
 .breakdownTabs-visual {
