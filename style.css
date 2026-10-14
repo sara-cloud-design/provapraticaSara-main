@@ -429,7 +429,7 @@ body {
         outline-offset: var(--focus-outline-offset);
     }
 
-    .breakdownTabs-toggle{
+    .breakdownTabs-item .breakdownTabs-toggle{
         display: none;
     }
 
@@ -439,10 +439,6 @@ body {
     list-style: none;
     gap: 2.5em;
     padding: 1.75em;
-    }
-
-    .breakdownTabs-ready .breakdownTabs-text{
-        display: block ;
     }
 
     .breakdownTabs-title {
@@ -710,6 +706,32 @@ color: var(--color-text-muted);
     font-size: var(--text-200-font-size);
 }
 
+.struttura{
+    display: flex;
+    flex-direction: row;
+    padding: 64px;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.struttura-descrizione{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 400px;
+}
+
+.struttura-title{
+    font-size: var(--heading-4-font-size);
+    font-weight: var(--heading-4-font-weight);
+}
+
+.struttura-text{
+    font-size: var(--text-200-font-size);
+    color: var(--color-text-muted);
+    line-height: var(--text-200-line-height);
+}
 
 
 
@@ -756,7 +778,7 @@ background: var(--color-white);
 }
 
 .theme-light .button-secondary:hover{
-    background-color: color-mix(in srgb, var(--color-button-secondary-bg), #A4AEA6  100%);;
+    background-color: color-mix(in srgb, var(--color-button-secondary-bg), #000  15%);;
 }
 
 .theme-light .button-primary{
@@ -778,9 +800,6 @@ background: var(--color-white);
 .breakdownTabs-ready .breakdownTabs-toggle {
     display: block;
 }
-
-
-
 
 .breakdownTabs-visual {
     display: none;
