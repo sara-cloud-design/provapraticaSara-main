@@ -86,7 +86,9 @@ function selectBreakdownTabs(selectedIndex) {
 }
 
 for (let i = 0; i < breakdownTabsButton.length; i++) {
-  breakdownTabsButton[i].addEventListener('click', function() {
+  breakdownTabsButton[i].addEventListener('click'), function() {
     selectBreakdownTabs(i);
-  });
 }
+}
+
+selectBreakdownTabs[0];

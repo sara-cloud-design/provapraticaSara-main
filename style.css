@@ -745,7 +745,18 @@ color: var(--color-text-muted);
   flex-direction: column;
   gap: 5em;
   padding: 1.5em;
- }
+color: var(--color-black);
+background: var(--color-white);
+
+}
+
+.theme-light .button-secondary{
+    background-color: #A4AEA6;
+}
+
+.theme-light .button-primary{
+   color: #fff;
+}
 
 .breakdownTabs{
 --breakdownTabs-button-gap: 1em;
@@ -763,9 +774,6 @@ color: var(--color-text-muted);
     display: block;
 }
 
-.breakdownTabs-text{
-    display: none;
-}
 
 .breakdownTabs-visual {
     display: none;
