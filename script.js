@@ -60,11 +60,11 @@ desktopMedia.addEventListener('change', function () {
   else if (!desktopMedia.matches && focusInNavigation) navigationButton.focus();
 });
 
-const breakdownTabs = document.querySelector("breakdownTabs");
-const breakdownTabsItems = document.querySelectorAll("breakdownTabs-item");
-const breakdownTabsButton = document.querySelectorAll("breakdownTabs-button");
+const breakdownTabs = document.querySelector(".breakdownTabs");
+const breakdownTabsItems = document.querySelectorAll(".breakdownTabs-item");
+const breakdownTabsButton = document.querySelectorAll(".breakdownTabs-button");
 
-breakdownTabs.classList.add = ("breakdownTabs-ready");
+breakdownTabs.classList.add("breakdownTabs-ready");
 
 function selectBreakdownTabs(selectedIndex) {
   for (let i = 0; i < breakdownTabsItems.length; i++) {
@@ -86,9 +86,10 @@ function selectBreakdownTabs(selectedIndex) {
 }
 
 for (let i = 0; i < breakdownTabsButton.length; i++) {
-  breakdownTabsButton[i].addEventListener('click'), function() {
-    selectBreakdownTabs(i);
-}
+  const index = i;
+  breakdownTabsButton[index].addEventListener('click', function() {
+    selectBreakdownTabs(index)
+});
 }
 
-selectBreakdownTabs[0];
+selectBreakdownTabs(0);

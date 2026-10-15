@@ -310,192 +310,7 @@ body {
     outline-offset: calc(-1 * var(--focus-outline-offset));
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .navigation-panel:popover-open {
-        animation: reveal var(--navigation-reveal-duration) var(--navigation-reveal-easing);
-    }
-    @keyframes reveal {
-        from {
-            opacity: 0;
-            transform: translateY(var(--navigation-reveal-offset));
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-}
 
-/* Su tablet cambia il layout, ma il popover resta attivo */
-@media (min-width: 48rem) {
-    .navigation {
-        --navigation-height: 4em;
-        --navigation-title-font-size: 1em;
-        --navigation-title-line-height: 1;
-        --navigation-toggle-font-size: var(--text-100-font-size);
-        --navigation-toggle-min-width: 6em;
-        --navigation-toggle-gap: 0.5em;
-        --navigation-list-gap: 0.0625em;
-        --navigation-list-padding: 0.5em 1em;
-        --navigation-link-min-height: 2.5em;
-        --navigation-link-padding: 0.5em 0.75em;
-    }
-    .navigation-brand {
-        padding-right: var(--navigation-brand-padding-end);
-        border-right: var(--border-width) solid var(--color-border-muted);
-    }
-    .navigation-menu:has(.navigation-panel[popover]) {
-        position: relative;
-    }
-    .navigation-toggle {
-        width: max-content;
-        min-width: var(--navigation-toggle-min-width);
-        gap: var(--navigation-toggle-gap);
-        border-right: var(--border-width) solid var(--color-border-muted);
-        font-weight: var(--font-weight-semibold);
-    }
-    .navigation-label {
-        display: inline;
-        white-space: nowrap;
-    }
-    .navigation-panel[popover] {
-        left: auto;
-        right: anchor(right);
-        width: anchor-size(width);
-        border: var(--border-width) solid var(--color-border-muted);
-        border-top: 0;
-    }
-    .navigation-list {
-        display: grid;
-        gap: var(--navigation-list-gap);
-        padding: var(--navigation-list-padding);
-    }
-    .navigation-list a {
-        min-height: var(--navigation-link-min-height);
-        color: var(--color-muted);
-        border-radius: var(--radius-control);
-    }
-    .navigation-list a:hover, .navigation-list a:focus-visible {
-        background: var(--navigation-link-hover-background);
-    }
-}
-
-/* Su desktop JS rimuove popover e gli elementi si dispongono in linea */
-@media (min-width: 1000px) {
-    .navigation {
-        --navigation-inline-list-padding: 0 0 0 1em;
-        --navigation-inline-link-padding: 0 0.25em;
-        --navigation-inline-label-padding: 0.25em 0.75em;
-    }
-    .navigation-content {
-        flex-wrap: nowrap;
-        height: calc(var(--navigation-height) - var(--border-width));
-    }
-    .navigation-menu:has(.navigation-panel:not([popover])) {
-        width: auto;
-        margin-left: 0;
-    }
-    .navigation-panel:not([popover]) {
-        position: static;
-        height: 100%;
-        border: 0;
-        overflow: visible;
-    }
-    .navigation-panel:not([popover]) .navigation-list {
-        display: flex;
-        height: 100%;
-        gap: 0;
-        padding: var(--navigation-inline-list-padding);
-    }
-    .navigation-panel:not([popover]) .navigation-list a {
-        height: 100%;
-        padding: var(--navigation-inline-link-padding);
-    }
-    .navigation-panel:not([popover]) .navigation-list a span {
-        padding: var(--navigation-inline-label-padding);
-        border-radius: var(--radius-pill);
-    }
-    .navigation-panel:not([popover]) .navigation-list a:hover, .navigation-panel:not([popover]) .navigation-list a:focus-visible {
-        background: transparent;
-    }
-    .navigation-panel:not([popover]) .navigation-list a:hover span {
-        background: var(--navigation-link-hover-background);
-    }
-    .navigation-panel:not([popover]) .navigation-list a:focus-visible {
-        outline: none;
-    }
-    .navigation-panel:not([popover]) .navigation-list a:focus-visible span {
-        outline: var(--focus-outline-width) solid var(--color-focus);
-        outline-offset: var(--focus-outline-offset);
-    }
-
-    .breakdownTabs-item .breakdownTabs-toggle{
-        display: none;
-    }
-
-    .breakdownTabs-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    list-style: none;
-    gap: 2.5em;
-    padding: 1.75em;
-    }
-
-    .breakdownTabs-title {
-    color: var(--color-text-muted);
-    }
-
-
-     .breakdownTabs-button {
-        border:0;
-        background: none;
-        color: inherit;
-        font: inherit;
-        text-align: left;
-        width: 100%;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--breakdownTabs-button-gap);
-        padding: var(--breakdownTabs-button-padding);
-
-    }
-
-    .breakdownTabs-item-study .is-selected {
-        color: var(--color-black);
-    }
-
-    .breakdownTabs-item-layout .is-selected {
-        color: var(--color-black);
-    }
-
-    .breakdownTabs-item-check .is-selected {
-        color: var(--color-black);
-    }
-
-    .breakdownTabs-visual {
-    display: none;
-   }
-
-    .breakdownTabs:has(#breakdownTabs-item-study.is-selected) .breakdownTabs-visual-study {
-        display: block;
-    }
-
-    .breakdownTabs:has(#breakdownTabs-item-layout.is-selected) .breakdownTabs-visual-layout {
-        display: block;
-    }
-
-    .breakdownTabs:has(#breakdownTabs-item-check.is-selected) .breakdownTabs-visual-check {
-        display: block;
-    }
-
-    .breakdownTabs-button::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-}
-}
 
 /* Destinazioni provvisorie dei link, da completare/sostituire in base al vostro case study */
 .chapters {
@@ -766,7 +581,7 @@ color: var(--color-text-muted);
   display: flex;
   flex-direction: column;
   gap: 5em;
-  padding: 1.5em;
+  padding: 2em;
 color: var(--color-black);
 background: var(--color-white);
 
@@ -785,11 +600,56 @@ background: var(--color-white);
    color: #fff;
 }
 
+.theme-light.sitemap{
+    gap: 40px;
+}
+
+.colonne-visive{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:start;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #fff;
+  font-weight: 600;
+}
+
+.barra-70, .barra-80, .barra-90, .barra-00{
+    padding: 12px 50px;
+
+}
+
+.barra-70{
+    background-color: #F2A000;
+
+}
+
+.barra-80{
+    background-color: #F22BB5;
+}
+
+.barra-90{
+    background-color: #C90035;
+}
+
+.barra-00{
+    background-color: #6478EA;
+}
+
+
 .breakdownTabs{
 --breakdownTabs-button-gap: 1em;
 --breakdownTabs-button-padding: 0em 0em 1.5em 0em;
---breakdownTabs-list-padding: 1.25em 2.25em 1.25em 2.5em;
+--breakdownTabs-list-padding: 1.25em 0em 1.25em 0em;
 
+}
+
+.breakdownTabs-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1000px;
 }
 
 
@@ -799,6 +659,12 @@ background: var(--color-white);
 
 .breakdownTabs-ready .breakdownTabs-toggle {
     display: block;
+}
+
+.breakdownTabs-visuals{
+    display: flex;
+    justify-content: center;
+
 }
 
 .breakdownTabs-visual {
@@ -834,7 +700,7 @@ background: var(--color-white);
 }
 
 .breakdownTabs-item{
-    padding: var(--breakdownTabs-list-padding);
+    padding: var(--breakdownTabs-list-padding) ;
     list-style: none;
     position: relative;
 
@@ -863,7 +729,7 @@ content: '';
     
 }
 
-.breakdownTabs-item .is-selected::before {
+.breakdownTabs-item.is-selected::before {
   background-color:#08872B;/* Colore quando selezionato */
   transform: scaleY(2); /* Moltiplica lo spessore senza alterare il layout */
 }
@@ -894,13 +760,208 @@ content: '';
     font-size: 30px;
     text-align: center;
     font-weight: 300;
-    color: #fff !important;
+    color: #fff;
 }
 
 .project-enter-text{
     text-align: center;
     font-size: var(--text-100-font-size);
     color: var(--color-text-muted);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .navigation-panel:popover-open {
+        animation: reveal var(--navigation-reveal-duration) var(--navigation-reveal-easing);
+    }
+    @keyframes reveal {
+        from {
+            opacity: 0;
+            transform: translateY(var(--navigation-reveal-offset));
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Su tablet cambia il layout, ma il popover resta attivo */
+@media (min-width: 48rem) {
+    .navigation {
+        --navigation-height: 4em;
+        --navigation-title-font-size: 1em;
+        --navigation-title-line-height: 1;
+        --navigation-toggle-font-size: var(--text-100-font-size);
+        --navigation-toggle-min-width: 6em;
+        --navigation-toggle-gap: 0.5em;
+        --navigation-list-gap: 0.0625em;
+        --navigation-list-padding: 0.5em 1em;
+        --navigation-link-min-height: 2.5em;
+        --navigation-link-padding: 0.5em 0.75em;
+    }
+    .navigation-brand {
+        padding-right: var(--navigation-brand-padding-end);
+        border-right: var(--border-width) solid var(--color-border-muted);
+    }
+    .navigation-menu:has(.navigation-panel[popover]) {
+        position: relative;
+    }
+    .navigation-toggle {
+        width: max-content;
+        min-width: var(--navigation-toggle-min-width);
+        gap: var(--navigation-toggle-gap);
+        border-right: var(--border-width) solid var(--color-border-muted);
+        font-weight: var(--font-weight-semibold);
+    }
+    .navigation-label {
+        display: inline;
+        white-space: nowrap;
+    }
+    .navigation-panel[popover] {
+        left: auto;
+        right: anchor(right);
+        width: anchor-size(width);
+        border: var(--border-width) solid var(--color-border-muted);
+        border-top: 0;
+    }
+    .navigation-list {
+        display: grid;
+        gap: var(--navigation-list-gap);
+        padding: var(--navigation-list-padding);
+    }
+    .navigation-list a {
+        min-height: var(--navigation-link-min-height);
+        color: var(--color-muted);
+        border-radius: var(--radius-control);
+    }
+    .navigation-list a:hover, .navigation-list a:focus-visible {
+        background: var(--navigation-link-hover-background);
+    }
+}
+
+/* Su desktop JS rimuove popover e gli elementi si dispongono in linea */
+@media (min-width: 1000px) {
+    .navigation {
+        --navigation-inline-list-padding: 0 0 0 1em;
+        --navigation-inline-link-padding: 0 0.25em;
+        --navigation-inline-label-padding: 0.25em 0.75em;
+    }
+    .navigation-content {
+        flex-wrap: nowrap;
+        height: calc(var(--navigation-height) - var(--border-width));
+    }
+    .navigation-menu:has(.navigation-panel:not([popover])) {
+        width: auto;
+        margin-left: 0;
+    }
+    .navigation-panel:not([popover]) {
+        position: static;
+        height: 100%;
+        border: 0;
+        overflow: visible;
+    }
+    .navigation-panel:not([popover]) .navigation-list {
+        display: flex;
+        height: 100%;
+        gap: 0;
+        padding: var(--navigation-inline-list-padding);
+    }
+    .navigation-panel:not([popover]) .navigation-list a {
+        height: 100%;
+        padding: var(--navigation-inline-link-padding);
+    }
+    .navigation-panel:not([popover]) .navigation-list a span {
+        padding: var(--navigation-inline-label-padding);
+        border-radius: var(--radius-pill);
+    }
+    .navigation-panel:not([popover]) .navigation-list a:hover, .navigation-panel:not([popover]) .navigation-list a:focus-visible {
+        background: transparent;
+    }
+    .navigation-panel:not([popover]) .navigation-list a:hover span {
+        background: var(--navigation-link-hover-background);
+    }
+    .navigation-panel:not([popover]) .navigation-list a:focus-visible {
+        outline: none;
+    }
+    .navigation-panel:not([popover]) .navigation-list a:focus-visible span {
+        outline: var(--focus-outline-width) solid var(--color-focus);
+        outline-offset: var(--focus-outline-offset);
+    }
+
+
+    .breakdownTabs-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    list-style: none;
+    gap: 2.5em;
+    }
+
+    .breakdownTabs-title {
+    color: var(--color-text-muted);
+    }
+
+
+     .breakdownTabs-button {
+        border:0;
+        background: none;
+        color: inherit;
+        font: inherit;
+        text-align: left;
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--breakdownTabs-button-gap);
+        padding: var(--breakdownTabs-button-padding);
+
+    }
+
+    .breakdownTabs-item-study .is-selected {
+        color: var(--color-black);
+    }
+
+    .breakdownTabs-item-layout .is-selected {
+        color: var(--color-black);
+    }
+
+    .breakdownTabs-item-check .is-selected {
+        color: var(--color-black);
+    }
+
+    .breakdownTabs-visual {
+    display: none;
+   }
+
+    .breakdownTabs:has(#breakdownTabs-item-study.is-selected) .breakdownTabs-visual-study {
+        display: block;
+    }
+
+    .breakdownTabs:has(#breakdownTabs-item-layout.is-selected) .breakdownTabs-visual-layout {
+        display: block;
+    }
+
+    .breakdownTabs:has(#breakdownTabs-item-check.is-selected) .breakdownTabs-visual-check {
+        display: block;
+    }
+
+    .breakdownTabs-button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    }
+
+    .breakdownTabs-ready .breakdownTabs-item:not(.is-selected) .breakdownTabs-text {
+        display: block;
+    }
+
+    .breakdownTabs-ready .breakdownTabs-toggle {
+        display: none;
+    }
+
+    .breakdownTabs-ready .breakdownTabs-item.is-selected .breakdownTabs-title{
+        color: var(--color-black);
+    }
 }
 
 
