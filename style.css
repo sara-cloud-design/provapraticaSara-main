@@ -109,7 +109,6 @@ body {
     --navigation-logo-size: 1.5em;
     --navigation-logo-margin-start: 1em;
     --navigation-logo-margin-end: 0.5em;
-    --navigation-brand-padding-end: 1em;
     --navigation-back-arrow-font-size: 1.75em;
     --navigation-back-arrow-line-height: 1;
     --navigation-back-arrow-offset: -0.75em;
@@ -605,11 +604,10 @@ background: var(--color-white);
 }
 
 .colonne-visive{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items:start;
-  border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(4 1fr);
+  grid-auto-flow: column;
+  border-radius: 2px;
   overflow: hidden;
   color: #fff;
   font-weight: 600;
