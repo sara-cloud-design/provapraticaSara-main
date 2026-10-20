@@ -151,7 +151,6 @@ body {
     left: 0;
     right: 0;
     height: var(--border-width);
-    background: var(--color-cursor);
     pointer-events: none;
 }
 
@@ -547,6 +546,11 @@ color: var(--color-text-muted);
     line-height: var(--text-200-line-height);
 }
 
+.struttura-image{
+    min-width: 40%;
+    height: auto;
+}
+
 
 
 .intro{
@@ -577,12 +581,10 @@ color: var(--color-text-muted);
 
 
  .theme-light{
-  display: flex;
-  flex-direction: column;
   gap: 5em;
   padding: 2em;
-color: var(--color-black);
-background: var(--color-white);
+  color: var(--color-black);
+  background: var(--color-white);
 
 }
 
@@ -603,11 +605,15 @@ background: var(--color-white);
     gap: 40px;
 }
 
+.highlights{
+    display: flex;
+    flex-direction: column;
+}
+
 .colonne-visive{
   display: grid;
-  grid-template-columns: repeat(4 1fr);
   grid-auto-flow: column;
-  border-radius: 2px;
+  border-radius: 4px;
   overflow: hidden;
   color: #fff;
   font-weight: 600;
@@ -635,7 +641,18 @@ background: var(--color-white);
     background-color: #6478EA;
 }
 
+@media(max-width: 640px){
+    .struttura{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
 
+    .colonne-visive{
+        grid-auto-flow: row;
+    }
+}
 .breakdownTabs{
 --breakdownTabs-button-gap: 1em;
 --breakdownTabs-button-padding: 0em 0em 1.5em 0em;
