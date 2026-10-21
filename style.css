@@ -335,8 +335,6 @@ body {
 
 
 .hero {
-    background: var(--color-black);
-    color: var(--color-white);
     text-align: center;
     --hero-text-max-width: 600px;
     --hero-content-gap: 1em;
@@ -667,6 +665,18 @@ color: var(--color-text-muted);
     max-width: 1000px;
 }
 
+.breakdownTabs-visual {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1158 / 651.38; /* Ripristina il rapporto originale che avevi nell'HTML ma in modo reattivo[cite: 4] */
+  object-fit: contain;
+}
+
+/* 2. Gestisci lo spazio sotto l'immagine in modo strutturale sul contenitore */
+.breakdownTabs-visuals {
+  margin-top: clamp(20px, 4vw, 70px);
+  margin-bottom: clamp(20px, 4vw, 70px); /* Crea uno spazio fluido che non sparisce su mobile */
+}
 
 .breakdownTabs-ready .breakdownTabs-item:not(.is-selected) .breakdownTabs-text {
     display: none;
@@ -676,14 +686,10 @@ color: var(--color-text-muted);
     display: block;
 }
 
-.breakdownTabs-visuals{
-    display: flex;
-    justify-content: center;
-
-}
 
 .breakdownTabs-visual {
     display: none;
+    
 }
 
 .breakdownTabs:has(#breakdownTabs-item-study.is-selected) .breakdownTabs-visual-study {
@@ -904,6 +910,8 @@ content: '';
     }
 
 
+
+
     .breakdownTabs-list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -944,10 +952,6 @@ content: '';
         color: var(--color-black);
     }
 
-    .breakdownTabs-visual {
-    display: none;
-   }
-
     .breakdownTabs:has(#breakdownTabs-item-study.is-selected) .breakdownTabs-visual-study {
         display: block;
     }
@@ -977,6 +981,10 @@ content: '';
     .breakdownTabs-ready .breakdownTabs-item.is-selected .breakdownTabs-title{
         color: var(--color-black);
     }
+
+    
 }
+
+
 
 
