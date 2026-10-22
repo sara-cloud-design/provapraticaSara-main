@@ -5,6 +5,10 @@
     
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 img{
     
     display: inline-block;
@@ -66,6 +70,7 @@ img{
     --layer-skip-link: 100;
     --icon-size: 20px;
     --icon-color: #08872B;
+    --footer-border-color:#262C28;
 }
 
 @media (max-width: 640px) {
@@ -517,6 +522,10 @@ color: var(--color-text-muted);
     font-size: var(--text-200-font-size);
 }
 
+.intro.concept{
+    text-align: left;
+}
+
 .struttura{
     display: flex;
     flex-direction: row;
@@ -724,6 +733,8 @@ color: var(--color-text-muted);
     padding: var(--breakdownTabs-list-padding) ;
     list-style: none;
     position: relative;
+    overflow: visible;
+    
 
 }
 
@@ -755,6 +766,7 @@ content: '';
   transform: scaleY(2); /* Moltiplica lo spessore senza alterare il layout */
 }
 
+
 .breakdownTabs-title{
     display: flex;
     width: 100%;
@@ -769,13 +781,31 @@ content: '';
     color: var(--color-text-muted);
 }
 
+.breakdownTabs-button:focus-visible {
+    outline: none;
+}
+
+.breakdownTabs-item:has(.breakdownTabs-button:focus-visible) {
+    outline: var(--focus-outline-width) solid var(--color-focus);
+    outline-offset: var(--focus-outline-offset);
+}
+
 
 .project-enter{
     background-color: #000;
     display: flex;
     flex-direction: column;
     padding: 2em;
+    gap: 1.5em;
 }
+
+.project-enter-intro{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+
 
 .project-enter-title{
     font-size: 30px;
@@ -790,6 +820,83 @@ content: '';
     color: var(--color-text-muted);
 }
 
+.project-enter-button-container {
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center;     /* Centra verticalmente (opzionale) */
+}
+
+.project-enter-button{
+    background-color: var(--color-button-primary-bg);
+    display: inline-block;
+    color: #fff;
+    border: none;
+    text-align: center;
+    width: fit-content;
+
+
+}
+
+.project-enter-button:hover{
+    background-color: color-mix(in srgb, var(--color-button-primary-bg), #000 16%);
+}
+
+.footer{
+    background-color: #000;
+    border-top: var(--color-cursor) solid 2px;
+    color: #fff;
+}
+
+.footer-marks, .signature-container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px;
+}
+
+.footer-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-tags, .signature {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25em;
+    color: var(--color-text-muted);
+    font-family: "Mona Sans Mono";
+    font-size: 12px ;
+}
+
+.go-back{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.go-back .go-back-text{
+    font-family: "Mona Sans";
+    color: #fff;
+    font-size: 12px;
+}
+
+.arrow-container{
+    border-radius: 6px;
+    border: var(--footer-border-color) solid 2px;
+    display: flex;
+    padding: 10px;
+    
+}
+
+.signature-container{
+    border-top: var(--footer-border-color) solid 2px;
+}
+
+.arrow-container
 @media (prefers-reduced-motion: no-preference) {
     .navigation-panel:popover-open {
         animation: reveal var(--navigation-reveal-duration) var(--navigation-reveal-easing);
@@ -981,6 +1088,7 @@ content: '';
     .breakdownTabs-ready .breakdownTabs-item.is-selected .breakdownTabs-title{
         color: var(--color-black);
     }
+
 
     
 }
