@@ -445,13 +445,25 @@ body {
     justify-content: center;
 }
 
+.theme-light.dati-autore{
+    padding-top: 0px;
+    width: 100%;
+
+}
+
 
 @media(max-width: 600px) {
     .dati-autore{
         display: flex;
         flex-direction: column;
         gap: 24px;
+        justify-content: center;
         
+    }
+
+    .theme-light.dati-autore{
+    display: flex;
+    gap: 20px;
     }
 }
 
@@ -459,6 +471,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: fit-content;
 }
 
 .dati-nome p {
@@ -477,6 +490,7 @@ color: var(--color-text-muted);
      display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: fit-content;
 
 }
 
@@ -494,6 +508,7 @@ color: var(--color-text-muted);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: fit-content;
 }
 
 .dati-modulo p {
@@ -510,6 +525,7 @@ color: var(--color-text-muted);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: fit-content;
 }
 
 .dati-scuola p {
@@ -523,8 +539,39 @@ color: var(--color-text-muted);
 }
 
 .intro.concept{
+    display: flex;
+    justify-content: flex-start;
     text-align: left;
+    align-items: start;
+    margin-left: 0;
+    padding: var(--spacing-64);
+    max-width: 50em;
+
 }
+
+.descrizione-concept{
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-64);
+    max-width: 50em;
+    gap: var(--spacing);
+}
+
+.descrizione-concept-title{
+    font-size: var(--font-size-h3);
+    font-weight: 400;
+    line-height: var(--text-100-line-height);
+
+}
+
+.descrizione-concept-text{
+    font-size: var(--text-200-font-size);
+    color: var(--color-text-muted);
+    line-height: var();
+
+}
+
+
 
 .struttura{
     display: flex;
@@ -565,6 +612,7 @@ color: var(--color-text-muted);
     flex-direction: column;
     align-items: center;
     text-align: center;
+    justify-content: center;
     gap: 16px;
     margin: 0 auto;
     max-width: 28em;
@@ -1088,9 +1136,7 @@ content: '';
     .breakdownTabs-ready .breakdownTabs-item.is-selected .breakdownTabs-title{
         color: var(--color-black);
     }
-
-
-    
+ 
 }
 
 
