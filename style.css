@@ -538,6 +538,26 @@ color: var(--color-text-muted);
     font-size: var(--text-200-font-size);
 }
 
+.theme-light.concept{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;    /* Impedisce ai figli di allungarsi a destra e sinistra */
+    justify-content: center; /* Allinea tutto dall'alto */
+    overflow: hidden;
+}
+
+#concept-container-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.img-concept{    
+  width: auto;
+  max-height: 100%;  /* Mantiene le proporzioni e riempie lo spazio senza sfocare */
+  flex-shrink: 0;
+  margin-top: var(--spacing-64);
+}
+
 .intro.concept{
     display: flex;
     justify-content: flex-start;
@@ -554,7 +574,7 @@ color: var(--color-text-muted);
     flex-direction: column;
     padding: var(--spacing-64);
     max-width: 50em;
-    gap: var(--spacing);
+    gap: 16px;
 }
 
 .descrizione-concept-title{
@@ -1015,6 +1035,21 @@ content: '';
     }
 }
 
+@media(max-width: 880px){
+    .theme-light.concept{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--spacing-40);
+    }
+
+    .img-concept{
+        margin-top: 0px;
+        margin-bottom: var(--spacing-64);
+    }
+}
+
 /* Su desktop JS rimuove popover e gli elementi si dispongono in linea */
 @media (min-width: 1000px) {
     .navigation {
@@ -1136,6 +1171,7 @@ content: '';
     .breakdownTabs-ready .breakdownTabs-item.is-selected .breakdownTabs-title{
         color: var(--color-black);
     }
+
  
 }
 
