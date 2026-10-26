@@ -458,7 +458,6 @@ body {
         flex-direction: column;
         gap: 24px;
         justify-content: center;
-        
     }
 
     .theme-light.dati-autore{
@@ -467,11 +466,10 @@ body {
     }
 }
 
-.dati-nome{
+.dati-nome, .dati-corso, .dati-modulo, .dati-scuola{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: fit-content;
 }
 
 .dati-nome p {
@@ -485,15 +483,6 @@ color: var(--color-text-muted);
     font-size: var(--text-200-font-size);
 }
 
-
-.dati-corso{
-     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: fit-content;
-
-}
-
 .dati-corso p{
     font-size: var(--eyebrow-font-size);
     color: var(--color-text-muted);
@@ -504,13 +493,6 @@ color: var(--color-text-muted);
     font-size: var(--text-200-font-size);
 }
 
-.dati-modulo{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: fit-content;
-}
-
 .dati-modulo p {
     font-size: var(--eyebrow-font-size);
     color: var(--color-text-muted);
@@ -519,13 +501,6 @@ color: var(--color-text-muted);
 .dati-modulo strong {
     color: var(--color-black);
     font-size: var(--text-200-font-size);
-}
-
-.dati-scuola{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: fit-content;
 }
 
 .dati-scuola p {
